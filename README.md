@@ -10,24 +10,24 @@ You can use this template straight off github if you have RubyMotion >= 2.3
 
 Once you've got the template locally, you can instead do:
 
-   `$ motion create --template=rmq-template <myappname>`
+  `$ motion create --template=rmq-template <myappname>`
 
 ### Install gem
 
-  bundle
+  `$ bundle`
 
 ### Test
 
 Run specs:
 
-  rake spec
+  `$ rake spec`
 
 Start app:
 
-  rake retina=4
+  `$ rake retina=4`
 
 Then in console:
 
-  rmq(UILabel).animations.throb.log
+  `rmq(UILabel).animations.throb.log`
 
 Have fun!
