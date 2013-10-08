@@ -21,14 +21,15 @@ Motion::Project::App.setup do |app|
 
   app.prerendered_icon = true
 
+  app.device_family = [:iphone, :ipad]
+  app.interface_orientations = [:portrait, :landscape_left, :landscape_right, :portrait_upside_down]
+
+  app.files += Dir.glob(File.join(app.project_dir, 'lib/**/*.rb'))
+
   # Use `rake config' to see complete project settings, here are some examples:
-  #
-  # app.device_family = [:iphone, :ipad]
-  # app.interface_orientations = [:portrait, :landscape_left, :landscape_right, :portrait_upside_down]
   #
   # app.fonts = ['Oswald-Regular.ttf', 'FontAwesome.otf'] # These go in /resources
   # app.frameworks = %w(QuartzCore CoreGraphics MediaPlayer MessageUI CoreData)
-  # app.files += Dir.glob(File.join(app.project_dir, 'lib/**/*.rb'))
   #
   # app.vendor_project('vendor/Flurry', :static)
   # app.vendor_project('vendor/DSLCalendarView', :static, :cflags => '-fobjc-arc') # Using arc
