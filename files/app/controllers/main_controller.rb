@@ -1,13 +1,34 @@
-class MainController < UIViewController
+class MainController < UIViewController 
 
   def viewDidLoad
     super
+
+    init_nav
 
     rmq.stylesheet = MainStylesheet
     rmq(self.view).apply_style :root_view
 
     # Create your UIViews here
     @hello_world_label = rmq.append(UILabel, :hello_world).get
+  end
+
+  def init_nav
+    self.title = 'Title Here'
+
+    self.navigationItem.tap do |nav|
+      nav.leftBarButtonItem = UIBarButtonItem.alloc.initWithBarButtonSystemItem(UIBarButtonSystemItemAction,
+                                                                           target: self, action: :nav_left_button)
+      nav.rightBarButtonItem = UIBarButtonItem.alloc.initWithBarButtonSystemItem(UIBarButtonSystemItemRefresh,
+                                                                           target: self, action: :nav_right_button)
+    end
+  end
+
+  def nav_left_button
+    puts 'Left button'
+  end
+
+  def nav_right_button
+    puts 'Right button'
   end
 
   # Remove if you are only supporting portrait
@@ -37,3 +58,5 @@ end
 
 # Then in willAnimateRotationToInterfaceOrientation
 rmq(:reapply_style).reapply_styles
+
+
