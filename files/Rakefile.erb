@@ -19,7 +19,10 @@ Motion::Project::App.setup do |app|
   #app.sdk_version = '6.1'
   #app.deployment_target = '6.0'
 
-  app.prerendered_icon = true
+  app.icons = ["icon.png", "icon-29.png", "icon-40.png", "icon-60.png", "icon-76.png", "icon-512.png"]
+
+  # prerendered_icon is only needed in iOS 6
+  #app.prerendered_icon = true
 
   app.device_family = [:iphone, :ipad]
   app.interface_orientations = [:portrait, :landscape_left, :landscape_right, :portrait_upside_down]
