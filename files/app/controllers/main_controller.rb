@@ -3,9 +3,11 @@ class MainController < UIViewController
   def viewDidLoad
     super
 
-    init_nav
+    # Sets a top of 0 to be below the navigation control
+    self.edgesForExtendedLayout = UIRectEdgeNone
 
     rmq.stylesheet = MainStylesheet
+    init_nav
     rmq(self.view).apply_style :root_view
 
     # Create your UIViews here
