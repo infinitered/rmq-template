@@ -1,4 +1,4 @@
-class MainController < UIViewController 
+class MainController < UIViewController
 
   def viewDidLoad
     super
@@ -11,7 +11,7 @@ class MainController < UIViewController
     rmq(self.view).apply_style :root_view
 
     # Create your UIViews here
-    @hello_world_label = rmq.append(UILabel, :hello_world).get
+    @hello_world_label = rmq.append!(UILabel, :hello_world)
   end
 
   def init_nav
@@ -48,8 +48,8 @@ end
 
 __END__
 
-# You don't have to reapply styles to all UIViews, if you want to optimize, 
-# another way to do it is tag the views you need to restyle in your stylesheet, 
+# You don't have to reapply styles to all UIViews, if you want to optimize,
+# another way to do it is tag the views you need to restyle in your stylesheet,
 # then only reapply the tagged views, like so:
 def logo(st)
   st.frame = {t: 10, w: 200, h: 96}
