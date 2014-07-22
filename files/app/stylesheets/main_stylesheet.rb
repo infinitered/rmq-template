@@ -10,12 +10,11 @@ class MainStylesheet < ApplicationStylesheet
   end
 
   def hello_world(st)
-    st.frame = {t: 100, w: 200, h: 18}
-    st.centered = :horizontal
+    st.frame = {top: 100, width: 200, height: 18, centered: :horizontal}
     st.text_alignment = :center
-    st.text = 'Hello World'
     st.color = color.battleship_gray
     st.font = font.medium
+    st.text = 'Hello World'
   end
 
 end
