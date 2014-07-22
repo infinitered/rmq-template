@@ -3,8 +3,8 @@ class MainController < UIViewController
   def viewDidLoad
     super
 
-    # Sets a top of 0 to be below the navigation control
-    self.edgesForExtendedLayout = UIRectEdgeNone
+    # Sets a top of 0 to be below the navigation control, it's best not to do this
+    # self.edgesForExtendedLayout = UIRectEdgeNone
 
     rmq.stylesheet = MainStylesheet
     init_nav
