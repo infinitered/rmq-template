@@ -1,4 +1,4 @@
-class MainController < UIViewController 
+class MainController < UIViewController
 
   def viewDidLoad
     super
@@ -33,23 +33,31 @@ class MainController < UIViewController
     puts 'Right button'
   end
 
-  # Remove if you are only supporting portrait
+  # Remove these if you are only supporting portrait
   def supportedInterfaceOrientations
     UIInterfaceOrientationMaskAll
   end
-
-  # Remove if you are only supporting portrait
   def willAnimateRotationToInterfaceOrientation(orientation, duration: duration)
+    # Called before rotation
     rmq.all.reapply_styles
   end
-
+  def viewWillLayoutSubviews
+    # Called anytime the frame changes, including rotation, and when the in-call status bar shows or hides
+    #
+    # If you need to reapply styles during rotation, do it here instead
+    # of willAnimateRotationToInterfaceOrientation, however make sure your styles only apply the layout when
+    # called multiple times
+  end
+  def didRotateFromInterfaceOrientation(from_interface_orientation)
+    # Called after rotation
+  end
 end
 
 
 __END__
 
-# You don't have to reapply styles to all UIViews, if you want to optimize, 
-# another way to do it is tag the views you need to restyle in your stylesheet, 
+# You don't have to reapply styles to all UIViews, if you want to optimize,
+# another way to do it is tag the views you need to restyle in your stylesheet,
 # then only reapply the tagged views, like so:
 def logo(st)
   st.frame = {t: 10, w: 200, h: 96}

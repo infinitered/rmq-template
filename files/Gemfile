@@ -3,8 +3,8 @@ source 'https://rubygems.org'
 gem 'rake'
 gem 'ruby_motion_query'
 
-# Useful tools that most people use
-#gem 'bubble-wrap' 
+# Pretty printing
+#gem 'motion_print' 
 
 # If you use a cocoapod (find them here https://www.cocoacontrols.com)
 #gem 'motion-cocoapods' 
@@ -21,3 +21,6 @@ gem 'ruby_motion_query'
 
 # If you need to access the network, use AFMotion; it uses AFNetworking
 #gem 'afmotion' 
+
+# Useful tools 
+#gem 'bubble-wrap' 
