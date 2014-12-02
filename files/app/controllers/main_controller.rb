@@ -11,7 +11,7 @@ class MainController < UIViewController
     rmq(self.view).apply_style :root_view
 
     # Create your UIViews here
-    @hello_world_label = rmq.append(UILabel, :hello_world).get
+    @hello_world_label = rmq.append!(UILabel, :hello_world)
   end
 
   def init_nav
