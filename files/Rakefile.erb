@@ -14,11 +14,11 @@ Motion::Project::App.setup do |app|
   app.version = app.short_version
 
   # SDK 8 for iOS 8 and above
-  # app.sdk_version = '8.1'
+  # app.sdk_version = '8.2'
   # app.deployment_target = '8.0'
 
   # SDK 8 for iOS 7 and above
-  app.sdk_version = '8.1'
+  app.sdk_version = '8.2'
   app.deployment_target = '7.1'
 
   # Or for SDK 7
@@ -49,4 +49,22 @@ Motion::Project::App.setup do |app|
   #   pod 'JMImageCache'
   # end
  
+  app.development do
+    app.info_plist["ProjectRootPath"] = File.dirname(__FILE__)
+    app.codesign_certificate = "iPhone Developer: YOURNAME"
+    app.provisioning_profile = "signing/<%= name.downcase.strip.gsub(/\s/, '_') %>.mobileprovision"
+  end
+
+  app.release do
+    app.entitlements['get-task-allow'] = false
+    app.codesign_certificate = 'iPhone Distribution: YOURNAME'
+    app.provisioning_profile = "signing/<%= name.downcase.strip.gsub(/\s/, '_') %>.mobileprovision"
+    app.seed_id = "YOUR_SEED_ID"
+    app.entitlements['application-identifier'] = app.seed_id + '.' + app.identifier
+    app.entitlements['keychain-access-groups'] = [ app.seed_id + '.' + app.identifier ]
+  end
+
+  puts "Name: #{app.name}"
+  puts "Using profile: #{app.provisioning_profile}"
+  puts "Using certificate: #{app.codesign_certificate}"
 end
