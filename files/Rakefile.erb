@@ -50,7 +50,6 @@ Motion::Project::App.setup do |app|
   # end
  
   app.development do
-    app.info_plist["ProjectRootPath"] = File.dirname(__FILE__)
     app.codesign_certificate = "iPhone Developer: YOURNAME"
     app.provisioning_profile = "signing/<%= name.downcase.strip.gsub(/\s/, '_') %>.mobileprovision"
   end
