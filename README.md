@@ -3,7 +3,7 @@ RubyMotionQuery - RMQ - Template
 
 A starting template for RubyMotion apps that use RubyMotionQuery (https://github.com/infinitered/rmq).
 
-RMQ - Template is maintained by ![Infinite Red](http://infinite.red), a web and mobile development company based in Portland, OR and San Francisco, CA.
+RMQ - Template is maintained by [Infinite Red](http://infinite.red), a web and mobile development company based in Portland, OR and San Francisco, CA.
 
 ## Install and use template
 You can use this template straight off github if you have RubyMotion >= 2.3
